@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    body {
+        background-color : pink;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 350px;
+        gap: 30px;
+        padding-top: 20px; /* Add some top padding */
+    }
+    
+    .message-box {
+        opacity: 0;
+        position: relative;
+        background-color: #1f8aff;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .me{
+        align-self: flex-end;
+        animation: slideLeft 0.5s ease-in-out var(--d) forwards;
+    }
+    
+    .triangle{
+        width: 0;
+        height: 0;
+        border-right: 20px solid transparent;
+        border-bottom: 15px solid #1f8aff;
+    }
+    .right {
+        position: absolute;
+        bottom: 10px;
+        right: -20px;
+    }
+    
+    @keyframes slideRight {
+        0% {
+            transform : translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideLeft{
+        0%{
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .btn-primary {
+        display: none; /* Initially hide the button */
+        position: relative;
+        padding : 10px 20px;
+        background: #1f8aff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        overflow: hidden;
+    }
+    .shape {
+        top: 0;
+        position: absolute;
+        background: #ffffff81;
+        width: 30px;
+        height: 100%;
+        clip-path: polygon(25% 0% 100% 0%, 75% 100% , 0% 100%);
+    }
+    .btn-primary:hover .shape{
+        transform: translateX();
+        transition: transform 0.8s;
+    }
+    .btn-primary:hover{
+        background: #ff00ff;
+        scale: 1.05s;
+        transform: all 0.5s;
+    }
+</style>
+    <div class="container">
+        <div class="message-box me" style="--d: 0s">
+            And how not worth it if you forget all of that just because you blame yourself.
+            <div class="triangle right"></div>
+        </div>
+        <div class="message-box me" style="--d: 4s">
+            Last, i just wanna say that many people love you ju
+            <div class="triangle right"></div>
+        </div>
+        <div class="message-box me" style="--d: 8s">
+            Including me, i love you as a friend, so i hope that you can love yourself too.
+            <div class="triangle right"></div>
+        </div>
+        <div class="message-box me" style="--d: 12s">
+            Don't hesitate to talk to me if you need someone to talk to
+            <div class="triangle right"></div>
+        </div>
+        <div class="message-box me" style="--d: 14s">
+            Have a great day juju !
+            <div class="triangle right"></div>
+        </div>
+        <a href="msg1" target="_blank">
+        <button id="nextButton" class="btn-primary me" style="--d: 16s" onclick="redirectToPage()">
+            Whatsapp
+            <div class="shape"></div>
+        </button>
+    </div>
+    
+    <script>
+        // Show the button after a delay of 21 seconds
+        setTimeout(() => {
+            document.getElementById('nextButton').style.display = 'block';
+        }, 16000); // 21 seconds
+        function redirectToPage() {
+            window.location.href = 'https://wa.me/081255436933';
+        }
+    </script>
+</body>
+</html>
